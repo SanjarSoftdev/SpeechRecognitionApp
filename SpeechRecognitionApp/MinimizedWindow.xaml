@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="SpeechRecognitionApp.MinimizedWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SpeechRecognitionApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Margin="10" PointerPressed="Grid_PointerPressed">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    RightTapped="StackPanel_RightTapped"
+                    Margin="5 20 5 5">
+            <Image x:Name="SpeekingImage" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    Margin="5">
+            <Image x:Name="ListeningImage"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" 
+            Orientation="Horizontal" 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" 
+            Margin="5">
+            <!-- Ellipse to create the circular border -->
+            <Grid>
+                <Ellipse Width="60" Height="60" Stroke="Black" StrokeThickness="2" Fill="DodgerBlue"/>
+                <Button x:Name="MicrophoneButton" 
+                    Width="60" Height="60" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Click="MicrophoneButton_Click"
+                    BorderThickness="0">
+                    <!-- Use a Grid to center the SymbolIcon -->
+                    <Button.Content>
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <SymbolIcon x:Name="MicrophoneButtonSymbolIcon" Width="40" Height="40" Symbol="Microphone"/>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
+

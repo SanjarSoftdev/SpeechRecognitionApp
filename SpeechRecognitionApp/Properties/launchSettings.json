@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SpeechRecognitionApp (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SpeechRecognitionApp (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

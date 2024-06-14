@@ -28,7 +28,7 @@ namespace SpeechRecognitionApp
             ExtendsContentIntoTitleBar = true;
         }
 
-        private void ResizeWindow(int width = 700, int height = 700) => AppWindow.Resize(new SizeInt32 { Width = width, Height = height });
+        private void ResizeWindow(int width = 800, int height = 800) => AppWindow.Resize(new SizeInt32 { Width = width, Height = height });
 
         private void InitializeSpeechHandler()
         {

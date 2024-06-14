@@ -12,7 +12,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Margin="20,10,10,10" Text="Assistant commands" FontSize="20" FontWeight="Bold" Foreground="DarkSlateBlue"/>
+        <TextBlock Grid.Row="0" Margin="20,10,10,10" Text="Assistant commands" FontSize="22" FontWeight="Bold" Foreground="DarkSlateBlue"/>
         <Grid Grid.Row="1" Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -27,25 +27,48 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Question:" Grid.Row="0" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontWeight="SemiBold"/>
-            <TextBox x:Name="QuestionTextBox" Grid.Row="0" Grid.Column="1" Margin="5" Padding="5"/>
+            <TextBlock Text="Question:" Grid.Row="0" Grid.Column="0" 
+                       Margin="5" VerticalAlignment="Center" FontSize="20" FontWeight="SemiBold"/>
+            <TextBox x:Name="QuestionTextBox" Grid.Row="0" Grid.Column="1"  
+                     FontSize="20" Margin="5" Padding="5"/>
 
-            <TextBlock Text="Answer:" Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontWeight="SemiBold"/>
-            <TextBox x:Name="AnswerTextBox" Grid.Row="1" Grid.Column="1" Margin="5" Padding="5"/>
+            <TextBlock Text="Answer:" Grid.Row="1" Grid.Column="0" 
+                       Margin="5" VerticalAlignment="Center"  FontSize="20" FontWeight="SemiBold"/>
+            <TextBox x:Name="AnswerTextBox" Grid.Row="1" Grid.Column="1"
+                     Margin="5" Padding="5"  FontSize="20"/>
 
-            <Button Content="Add Command" Grid.Row="2" Grid.Column="0" Margin="5" Click="AddCommand_Click" Background="DarkSlateBlue" Foreground="White" Padding="5"/>
-            <TextBlock x:Name="AddingMessage" Grid.Row="2" Grid.Column="1" Margin="5" VerticalAlignment="Center" Foreground="Red"/>
+            <Button Content="Add Command" Grid.Row="2" Grid.Column="0" 
+                    Margin="5" Click="AddCommand_Click" Background="DarkSlateBlue" Foreground="White" Padding="5"  FontSize="18"/>
+            <TextBlock x:Name="AddingMessage" Grid.Row="2" Grid.Column="1" 
+                       Margin="5" VerticalAlignment="Center" Foreground="Red" FontSize="20"/>
 
-            <TextBlock Text="Search:" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontWeight="SemiBold"/>
-            <TextBox x:Name="SearchTextBox" Grid.Row="3" Grid.Column="1" Margin="5" Padding="5" TextChanged="SearchTextBox_TextChanged"/>
+            <TextBlock Text="Search:" Grid.Row="3" Grid.Column="0" 
+                       Margin="5" VerticalAlignment="Center" FontWeight="SemiBold"  FontSize="20"/>
+            <TextBox x:Name="SearchTextBox" Grid.Row="3" Grid.Column="1" Margin="5" Padding="5" 
+                     TextChanged="SearchTextBox_TextChanged"  FontSize="20"/>
 
-            <ListBox x:Name="CommandsListBox" Grid.Row="4" Grid.ColumnSpan="2" Margin="5" 
+            <ListBox x:Name="CommandsListBox"
+                 Grid.Row="4"
+                 Grid.ColumnSpan="2"
+                 Margin="5"
+                 ScrollViewer.VerticalScrollMode="Enabled"
+                 ScrollViewer.HorizontalScrollMode="Enabled"
                  ScrollViewer.VerticalScrollBarVisibility="Visible"
                  ScrollViewer.HorizontalScrollBarVisibility="Visible"
-                 BorderThickness="1" BorderBrush="DarkSlateBlue" Padding="5"/>
+                 BorderThickness="1"
+                 BorderBrush="DarkSlateBlue"
+                 Padding="5">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" FontSize="20"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
 
-            <Button Content="Delete Command" Grid.Row="5" Grid.Column="0" Margin="5" Click="DeleteCommand_Click" Background="DarkSlateBlue" Foreground="White" Padding="5"/>
-            <TextBlock x:Name="DeletingMessage" Grid.Row="5" Grid.Column="1" Margin="5" VerticalAlignment="Center" Foreground="Red"/>
+            <Button Content="Delete Command" Grid.Row="5" Grid.Column="0" 
+                    Margin="5" Click="DeleteCommand_Click" Background="DarkSlateBlue" Foreground="White" Padding="5"  FontSize="18"/>
+            <TextBlock x:Name="DeletingMessage" Grid.Row="5" Grid.Column="1" 
+                       Margin="5" VerticalAlignment="Center" Foreground="Red" FontSize="20"/>
         </Grid>
     </Grid>
 </Window>
